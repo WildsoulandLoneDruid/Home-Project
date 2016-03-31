@@ -207,7 +207,7 @@ pLenght=0;
         	 
         cout<<"What is the address of the house?\n";
 	cin>>hAddress;
-	/*
+	
  cout<<"What are the Dymensions of the Property? \n"<<endl<<"Lenght \n"<<"Feet \n";
 cin>>Propertylenghtfeet;
 cout<<"Inches \n";
@@ -236,7 +236,7 @@ cout<<endl;
 cout<<"What is the color of the house? \n";
 cin>>hColor;
 cout<<"How many rooms are in the house? \n";
-cin>>nRoom; */
+cin>>nRoom; 
         }
 
     void sethouseDymensionlenghtinsert(int hLenghtfeet, int  hLenghtinches ){
@@ -393,6 +393,7 @@ string houseAns;
 Room * trav2;
 Home * trav;
 Home * homeTrav;
+Room * roomTrav;
 homeTrav = 0;
 trav = 0;
 string roomAns;
@@ -452,19 +453,22 @@ case 2:
 					cout<<"Would you like to see the Rooms \n";
 					cin>>roomAns;
 					if (roomAns=="Yes"||roomAns=="Y"||roomAns=="yes"||roomAns=="y"){
+					
 					trav2= head2;
-							do{trav2= head2;
+					roomTrav=trav2;
+							do{
+								
 							cout<<"This is Room "<<roomNum + 1<<endl;
 							trav2->display();
 							cout<<endl;
-							trav2 = head2-> next;
+							roomTrav = trav2->next;
+							trav2=roomTrav;
 							roomNum++;
 							cout<<"Would you like to see the next room \n";
 							cin>>roomAns2;
 							
 						
-							
-						}while(trav2-> next != 0||roomAns=="Yes"||roomAns=="Y"||roomAns=="yes"||roomAns=="y");
+						}while((roomAns2=="Yes"||roomAns2=="Y"||roomAns2=="yes"||roomAns2=="y") && (head -> next != 0) && check==false);
 						
 					}
 					
